@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form">
+        <div class="container">
+            <div class="form__formBlock">
+                <div class="form__title">Make an appointment</div>
+                <form method="post" class="form__form" action="appointment/">
+                    {% csrf_token %}
+                    <div class="form__inputBlock1">
+                        <input name="name" class="name" placeholder="Name" type="text">
+                        <input class="email" name="email" placeholder="Email" type="text">
+                    </div>
+                    <div class="form__inputBlock2">
+                        <input type="text" name="phone-number" placeholder="Phone Number" class="phone-number">
+                        <input type="text" name="select-service" placeholder="select Service" class="select-service">
+                    </div>
+                    <div class="form__inputBlock3">
+                        <textarea cols="20" type="text" class="input__text" placeholder="Tell us about the car needing service(s)" name="input__text"></textarea>
+                    </div>
+                    <div class="form__buttonBlock">
+                        <input type="submit" value="SEND AN APPOINTMENT" class="button">
+                    </div>
+                </form>
+            </div>
+            <div class="form__text">
+                <div class="form__text1">
+                    <p class="form__p1">Maxime placeat facere</p>
+                    <p class="form__p1">possimus omnis</p>
+                </div>
+                <div class="form__text2">17k</div>
+                <div class="form__text3">customers served (and counting)</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
